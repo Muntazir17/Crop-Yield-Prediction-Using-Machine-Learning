@@ -1,0 +1,141 @@
+{% extends 'layout.html' %} {% block body %}
+
+<style>
+  html body {
+    background-color: rgb(255, 255, 255);
+  }
+</style>
+<!--Form Section-->
+<br /><br />
+<h2 style="text-align: center; margin: 0px; color: black">
+  <b>Crop Recommendation </b>
+</h2>
+<br />
+
+<div
+  style="
+    width: 350px;
+    height: 40rem;
+    margin: 0px auto;
+    color: black;
+    border-radius: 25px;
+    padding: 10px 10px;
+  "
+>
+  <form method="POST" action="{{ url_for('c_recommend') }}">
+    <div class="form-group">
+      <label for="Nitrogen" style="font-size: 17px"><b>Nitrogen</b></label>
+      <input
+        type="number"
+        class="form-control"
+        id="Nitrogen"
+        name="nitrogen"
+        placeholder="Enter the value (example:50)"
+        style="font-weight: bold"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="Phosphorous" style="font-size: 17px"
+        ><b>Phosphorous</b></label
+      >
+      <input
+        type="number"
+        class="form-control"
+        id="Phosphorous"
+        name="phosphorous"
+        placeholder="Enter the value (example:50)"
+        style="font-weight: bold"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="Pottasium" style="font-size: 17px"><b>Pottasium</b></label>
+      <input
+        type="number"
+        class="form-control"
+        id="Pottasium"
+        name="pottasium"
+        placeholder="Enter the value (example:50)"
+        style="font-weight: bold"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+        <label for="Temperature" style="font-size: 17px"><b>Temperature</b></label>
+        <input
+          type="number"
+          class="form-control"
+          id="Temperature"
+          name="temperature"
+          placeholder="Enter the value"
+          style="font-weight: bold"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="Humidity" style="font-size: 17px"><b>Humidity</b></label>
+        <input
+          type="number"
+          class="form-control"
+          id="Humidity"
+          name="humidity"
+          placeholder="Enter the value"
+          style="font-weight: bold"
+          required
+        />
+      </div>
+
+
+      <div class="form-group">
+        <label for="PH" style="font-size: 17px"><b>PH</b></label>
+        <input
+          type="number"
+          class="form-control"
+          id="PH"
+          name="ph"
+          placeholder="Enter the value (example:50)"
+          style="font-weight: bold"
+          required
+        />
+      </div>
+
+
+      <div class="form-group">
+        <label for="Rainfall" style="font-size: 17px"><b>Rainfall</b></label>
+        <input
+          type="number"
+          class="form-control"
+          id="Rainfall"
+          name="rainfall"
+          placeholder="Enter the value"
+          style="font-weight: bold"
+          required
+        />
+      </div>
+
+   
+
+    <div class="d-flex justify-content-center">
+      <button
+        type="submit"
+        class="btn btn-info"
+        style="
+          color: black;
+          font-weight: bold;
+          width: 130px;
+          height: 50px;
+          border-radius: 12px;
+          font-size: 21px;
+        "
+      >
+        Predict
+      </button>
+    </div>
+  </form>
+  <br> <br>
+</div>
+{% endblock %}

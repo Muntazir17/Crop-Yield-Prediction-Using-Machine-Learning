@@ -1,0 +1,51 @@
+
+{% extends 'layout.html' %}
+
+{% block head %}
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <style>
+    .card {
+      background-color: #F5F5F5;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      color: #333;
+      font-family: 'Open Sans', sans-serif;
+    }
+    .card-header {
+      background-color: #8FBC8F;
+      color: #FFF;
+      border-radius: 10px 10px 0 0;
+      font-weight: 700;
+    }
+    .card-body {
+      padding: 30px;
+    }
+    .card-title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-top: 0;
+    }
+    .card-text {
+      font-size: 1.2rem;
+      font-weight: 400;
+      margin-bottom: 0;
+    }
+  </style>
+{% endblock %}
+
+{% block body %}
+  <div class="container my-5">
+    <div class="row justify-content-center">
+      <div class="col-md-8 col-lg-6">
+        <div class="card">
+          <div class="card-header text-center">
+            <h2>You should grow <i>{{ prediction }} </i>in your farm</h2>
+          </div>
+          <div class="card-body">
+            <p class="card-text text-center">This is your final Yield Prediction result.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

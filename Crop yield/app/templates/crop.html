@@ -1,0 +1,255 @@
+{% extends 'layout.html' %} {% block body %}
+
+<style>
+
+    html body {
+      background-color: rgb(255, 255, 255);
+
+      
+  }
+
+  
+</style>
+<!--Form Section-->
+<br /><br />
+<h2 style="text-align: center; margin: 0px; color: black">
+  <b>Find out the most suitable crop to grow in your farm</b>
+</h2>
+<br />
+
+ 
+<div
+  style="
+    width: 350px;
+    height: 50rem;
+    margin: 0px auto;
+    color: black;
+    border-radius: 25px;
+    padding: 10px 10px;
+  "
+>
+  <form method="POST" action="{{ url_for('crop_prediction') }}">
+    <div class="form-group">
+      <label for="PH" style="font-size: 17px"><b>pH level</b></label>
+      <input
+        type="number"
+        step="0.01"
+        class="form-control"
+        id="PH"
+        name="pH"
+        placeholder="Enter the pH value"
+        style="font-weight: bold"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="Salinity" style="font-size: 17px"><b>Salinity</b></label>
+      <input
+        type="number"
+        step="0.01"
+        class="form-control"
+        id="Salinity"
+        name="salinity"
+        placeholder="Enter the Salinity value"
+        style="font-weight: bold"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="OC" style="font-size: 17px"><b>Organic Carbon</b></label>
+      <input
+        type="number"
+        step="0.01"
+        class="form-control"
+        id="OC"
+        name="oC"
+        placeholder="Enter the value of Organic Carbon"
+        style="font-weight: bold"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="Nitrogen" style="font-size: 17px"><b>Nitrogen</b></label>
+      <input
+        type="number"
+        class="form-control"
+        id="Nitrogen"
+        name="nitrogen"
+        placeholder="Enter the Nitrogen value (example:50)"
+        style="font-weight: bold"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="Phosphorous" style="font-size: 17px"><b>Phosphorous</b></label
+      >
+      <input
+        type="number"
+        class="form-control"
+        id="Phosphorous"
+        name="phosphorous"
+        placeholder="Enter the Phosphorous value (example:50)"
+        style="font-weight: bold"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="Pottasium" style="font-size: 17px"><b>Pottasium</b></label>
+      <input
+        type="number"
+        class="form-control"
+        id="Pottasium"
+        name="pottasium"
+        placeholder="Enter the value Pottasium (example:50)"
+        style="font-weight: bold"
+        required
+      />
+    </div>
+    
+    <div class="form-group">
+      <label for="Rainfall" style="font-size: 17px"><b>Rainfall (in mm)</b></label>
+      <input
+        type="number"
+        step="0.01"
+        class="form-control"
+        id="Rainfall"
+        name="rainfall"
+        placeholder="Enter the Rainfall value"
+        style="font-weight: bold"
+        required
+      />
+    </div>
+   
+    
+    <div class="form-group">
+      <label for="Humidity" style="font-size: 17px"><b>Humidity</b></label>
+      <input
+        type="number"
+        step="0.01"
+        class="form-control"
+        id="Humidity"
+        name="humidity"
+        placeholder="Enter the Humidity value"
+        style="font-weight: bold"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="Min_Temp" style="font-size: 17px"><b>Minimum Temperature</b></label>
+      <input
+        type="number"
+        step="0.01"
+        class="form-control"
+        id="Min_Temp"
+        name="min_Temp"
+        placeholder="Enter the Minimum Temperature in Celcius"
+        style="font-weight: bold"
+        required
+      />
+      </div>
+    <div class="form-group">
+      <label for="Max_Temp" style="font-size: 17px"><b>Maximum Temperature</b></label>
+      <input
+        type="number"
+        step="0.01"
+        class="form-control"
+        id="Max_Temp"
+        name="max_Temp"
+        placeholder="Enter the Maximum Temperature in Celcius"
+        style="font-weight: bold"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="Wind_Speed" style="font-size: 17px"><b>Wind Speed</b></label>
+      <input
+        type="number"
+        step="0.01"
+        class="form-control"
+        id="Wind_Speed"
+        name="wind_Speed"
+        placeholder="Enter the value of Wind speed"
+        style="font-weight: bold"
+        required
+      />
+    </div>
+    
+    <div class="form-group">
+      <label for="crop" style="font-size: 17px"
+        ><b>Crop</b></label
+      >
+      <select
+        name="crop"
+        class="form-control"
+        id="Crop"
+        placeholder="Select a crop"
+        style="font-weight: bold"
+        required
+      >
+        <option selected>Select crop</option>
+        <option>rice</option>
+        <option>maize</option>
+        <option>chickpea</option>
+        <option>kidneybeans</option>
+        <option>pigeonpeas</option>
+        <option>mothbeans</option>
+        <option>mungbean</option>
+        <option>blackgram</option>
+        <option>lentil</option>
+        <option>pomegranate</option>
+        <option>banana</option>
+        <option>mango</option>
+        <option>grapes</option>
+        <option>watermelon</option>
+        <option>muskmelon</option>
+        <option>apple</option>
+        <option>orange</option>
+        <option>papaya</option>
+        <option>coconut</option>
+        <option>cotton</option>
+        <option>jute</option>
+        <option>coffee</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="season" style="font-size: 17px"
+        ><b>Season</b></label
+      >
+      <select
+        name="season"
+        class="form-control"
+        id="season"
+        placeholder="Select Season"
+        style="font-weight: bold"
+        required
+      >
+        <option selected>Select Season</option>
+        <option>Rabbi</option>
+        <option>Kharif</option>
+      </select>
+    </div>
+
+    <div class="d-flex justify-content-center">
+      <button
+        type="submit"
+        class="btn btn-info"
+        style="color: black; font-weight: bold; width: 130px; height:50px; border-radius:12px; font-size: 21px;"
+      >
+        Predict
+      </button>
+    </div>
+  </form>
+</div>
+<br>
+<br>
+
+
+
+
+
+
+<!-- Form section -->
+
+{% endblock %}
