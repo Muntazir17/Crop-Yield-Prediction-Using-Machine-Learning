@@ -12,7 +12,7 @@
   - Management practices (irrigation, fertilizer usage)
 - Uses **Support Vector Regression (SVR)**, **Random Forest**, and **Bagging** algorithms to ensure accurate predictions.
 
-The primary goal of the project is to empower farmers with data-driven insights to optimize agricultural productivity. Additionally, a research paper detailing this work has been published: [Research Paper Title](https://link.springer.com/chapter/10.1007/978-981-99-8476-3_7).
+The primary goal of the project is to empower farmers with data-driven insights to optimize agricultural productivity. Additionally, a research paper detailing this work has been published: [Research Paper](https://link.springer.com/chapter/10.1007/978-981-99-8476-3_7).
 
 ---
 
